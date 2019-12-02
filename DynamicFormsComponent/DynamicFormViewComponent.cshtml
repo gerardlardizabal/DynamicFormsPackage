@@ -1,0 +1,14 @@
+﻿@model DynamicForms.Objects.Forms.Form
+
+@if (Model != null)
+{
+    <h1>@Model.Name</h1>
+    @foreach (var sec in Model.Sections)
+    {
+       <h4>@sec.Name</h4>
+       @foreach (var field in sec.Fields)
+       {
+           @await Component.InvokeAsync("DynamicFormField", field);
+       }
+    }
+}

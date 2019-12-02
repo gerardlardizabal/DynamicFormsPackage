@@ -1,0 +1,10 @@
+﻿@model DynamicForms.Objects.FormFields.FormField
+
+@if(Model != null)
+{
+    @if (Model.Type.Equals("text"))
+    {
+        <label for="@Model.FieldId">@Model.Name</label>
+        <input id="@Model.FieldId" name="@Model.Name" />
+    }
+}
